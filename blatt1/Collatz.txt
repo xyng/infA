@@ -1,0 +1,50 @@
+Collatz für: 1
+Anzahl der Iterationen: 0
+Collatz für: 2
+Anzahl der Iterationen: 1
+Collatz für: 3
+Anzahl der Iterationen: 7
+Collatz für: 4
+Anzahl der Iterationen: 2
+Collatz für: 5
+Anzahl der Iterationen: 5
+Collatz für: 6
+Anzahl der Iterationen: 8
+Collatz für: 7
+Anzahl der Iterationen: 16
+Collatz für: 8
+Anzahl der Iterationen: 3
+Collatz für: 9
+Anzahl der Iterationen: 19
+Collatz für: 10
+Anzahl der Iterationen: 6
+Collatz für: 11
+Anzahl der Iterationen: 14
+Collatz für: 12
+Anzahl der Iterationen: 9
+Collatz für: 13
+Anzahl der Iterationen: 9
+Collatz für: 14
+Anzahl der Iterationen: 17
+Collatz für: 15
+Anzahl der Iterationen: 17
+Collatz für: 16
+Anzahl der Iterationen: 4
+Collatz für: 17
+Anzahl der Iterationen: 12
+Collatz für: 18
+Anzahl der Iterationen: 20
+Collatz für: 19
+Anzahl der Iterationen: 20
+Collatz für: 20
+Anzahl der Iterationen: 7
+Collatz für: 21
+Anzahl der Iterationen: 7
+Collatz für: 22
+Anzahl der Iterationen: 15
+Collatz für: 23
+Anzahl der Iterationen: 15
+Collatz für: 24
+Anzahl der Iterationen: 10
+Collatz für: 25
+Anzahl der Iterationen: 23
