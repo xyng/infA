@@ -3,10 +3,11 @@
 import AlgoTools.IO;
 
 /**
- *  * @version 02.01.16
- *  *
- *  * @author  dmelchior
- *  */
+ * @version 02.01.16
+ *
+ * @author  dmelchior
+ * @author  coelker
+ */
 
 public class SuperListe extends VerweisListe implements Liste {
 
