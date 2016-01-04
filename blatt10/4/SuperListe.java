@@ -51,7 +51,7 @@ public class SuperListe extends VerweisListe implements Liste {
 	public void unique() {
 		// In einer leeren Liste können keine Duplikate gesucht werden
 		// ggf. überflüssige behandlung, da unique trotzdem laufen sollte
-		if(this.empty) {
+		if(this.empty()) {
 			throw new RuntimeException("Diese Liste ist leer!");
 		}
 
