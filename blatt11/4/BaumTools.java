@@ -4,6 +4,9 @@ import AlgoTools.IO;
 
 /**
  * Utility-Klasse mit einigen Algorithemn fuer Baeume
+ *
+ * @author dmelchior
+ * @author coelker
  */
 public class BaumTools {
 
@@ -92,6 +95,11 @@ public class BaumTools {
 
   }
 
+  /**
+   * Stellt die Tiefe des Baumes fest.
+   * @param  b zu betrachtender Baum
+   * @return   Tiefe des Baumes
+   */
   public static int baumTiefe(Baum b) {
     if(b.empty()) {
       return 0; // Rekursionsanker
@@ -111,34 +119,44 @@ public class BaumTools {
 
   }
 
+  /**
+   * Erzeugt ursprünglichen Baum aus seiner inoder- und postorder-Traversierung
+   * @param  inorder   Inorder-Traversierung des Baumes
+   * @param  postorder Postorder-Traversierung des Baumes
+   * @return           Ursprünglicher Baum
+   */
   public static VerweisBaum inorderPostorderBau (int[] inorder,
                                                  int[] postorder) {
     if(inorder.length == 0) {
       return new VerweisBaum(); // anker
     }
 
+    // Wurzel finden (=> steht immer an letzter Stelle in postorder)
     int rootVal = postorder[postorder.length - 1];
     int i;
 
     // Position von RootVal bestimmen
     for (i = 0; i < inorder.length && inorder[i] != rootVal; i++);
+
     // Neue Arrays mit Daten für linken und rechten Teilbaum erzeugen
     // Daten für Linken Teilbaum sind in beiden Arrays vor Position i.
-
     int[] inL = new int[i];
     int[] postL = new int[i];
 
+    // Daten in Arrays für linken Teilbaum schreiben
     for (int j = 0; j < i; j++) {
       inL[j] = inorder[j];
       postL[j] = postorder[j];
     }
 
-    // Menge der verbleibenden Elemente bestimmen
+    // Menge der verbleibenden Elemente bestimmen (=> alle nach der Wurzel)
     int lengthR = postorder.length - i - 1;
 
+    // Arrays für rechten Teilbaum erstellen
     int[] inR = new int[lengthR];
     int[] postR = new int[lengthR];
 
+    // Und mit Daten befüllen
     for (int j = 0; j < lengthR; j++) {
       // inorder fängt bei dem element nach Root an (=> i + 1)
       // damit wird auch das letzte Element aus inorder erreicht
@@ -156,19 +174,29 @@ public class BaumTools {
     );
   }
 
+  /**
+   * Ermittelt die Anzahl der Knoten im gegebenen Baum
+   * @param  b zu betrachtender Baum
+   * @return   Anzahl der Knoten
+   */
   public static int anzahlKnoten(Baum b) {
     if (b.empty()) {
       return 0;
     }
-
+    // Anzahl der Knoten in beiden Teilbäumen plus aktueller Knoten (=> 1)
     return 1 + anzahlKnoten(b.left()) + anzahlKnoten(b.right());
   }
 
+  /**
+   * Stellt fest ob Baum vollständig oder nicht
+   * @param  b zu betrachtender Baum
+   * @return   true wenn vollständig, false sonst.
+   */
   public static boolean istVollstaendig(Baum b) {
     if (b.empty()) {
       return true;
     }
-
+    // Baum ist vollständig wenn beide Teilbäume gleich tief.
     return baumTiefe(b.left()) == baumTiefe(b.right());
   }
 
